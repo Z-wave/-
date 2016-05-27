@@ -12,3 +12,8 @@ http://stackoverflow.com/questions/4657545/history-back-with-refresh
 jquery.validation 自定义按钮提交，验证失败字段不会获得焦点
 -----------------------------------  
 http://stackoverflow.com/questions/10111907/how-to-focus-invalid-fields-with-jquery-validate
+
+
+wap网页分享到微信，仅支持UC，QQ浏览器
+-----------------------------------  
+https://github.com/JefferyWang/nativeShare.js
