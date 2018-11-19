@@ -107,7 +107,7 @@ let difference = a.concat(b).filter(v => !a.includes(v) || !b.includes(v))
 let intersection = a.concat(b).filter(v => a.some(x => x.id == v.id) === b.some(y => y.id == v.id))
 
 //差集
-let difference = a.concat(b).filter(v => ！a.some(x => x.id == v.id) || !b.some(y => y.id == v.id))
+let difference = a.concat(b).filter(v => !a.some(x => x.id == v.id) || !b.some(y => y.id == v.id))
 ```
 
 
