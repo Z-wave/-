@@ -10,6 +10,8 @@ this.$axios({
 }).then(res => {})
 ```
 
+
+
 ## Webpack按需拆分代码(异步加载组件)
 
 `() => import()`
@@ -33,6 +35,8 @@ this.$axios({
 ```javascript
 resolve => require.ensure([], () => resolve(require('./components/linkface.vue')), "linkface")
 ```
+
+
 
 ## Vue父子组件通信
 
@@ -66,5 +70,58 @@ this.$refs.preview.setId(id)
 
 ```javascript
 this.$emit('change',this.id)
+```
+
+
+
+## 删除对象属性
+
+```javascript
+const params = JSON.parse(JSON.stringify(req.body,(key,value) => {
+    if(key == '_id'){
+        return undefined
+    }else{
+        return value
+    }
+}))
+```
+
+
+
+## 数组交集/差集
+
+```javascript
+//交集
+let intersection = a.filter(v => b.includes(v))
+
+//差集
+let difference = a.concat(b).filter(v => !a.includes(v) || !b.includes(v))
+```
+
+
+
+## 数组对象交集/差集
+
+```javascript
+//交集
+let intersection = a.concat(b).filter(v => a.some(x => x.id == v.id) === b.some(y => y.id == v.id))
+
+//差集
+let difference = a.concat(b).filter(v => ！a.some(x => x.id == v.id) || !b.some(y => y.id == v.id))
+```
+
+
+
+## 数组对象通过key去重
+
+```javascript
+function unique(arr,key) {
+    let hash = {};
+
+    return arr.reduce((item, next) => {
+        hash[next[key]] ? '' : hash[next[key]] = true && item.push(next);
+        return item
+    }, [])
+}
 ```
 
