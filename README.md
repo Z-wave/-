@@ -125,3 +125,10 @@ function unique(arr,key) {
 }
 ```
 
+
+## fetch 500状态获取response
+
+```javascript
+const res = response.json()
+```
+
