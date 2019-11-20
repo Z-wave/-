@@ -132,3 +132,10 @@ function unique(arr,key) {
 const res = response.json()
 ```
 
+
+## chrome(version:78.0.3904.87)特定情况下table标签渲染异常,[Codepen](https://codepen.io/z-wave/pen/Jjjxxdx)
+
+### 1、table宽度100%右边始终有1px间距,这是一个[chrome bug](https://bugs.chromium.org/p/chromium/issues/detail?id=306878)
+### 2、td子级包含块级元素，td底部边框会上移1px
+
+把.card的宽度设置成1200.3px，并且隐藏.box，渲染就会恢复正常；针对第二点把td bottom设置成0.9px也会恢复正常
